@@ -135,7 +135,7 @@
     "rc-progress": "~3.1.0",
     "rc-rate": "~2.9.0",
     "rc-resize-observer": "^1.0.0",
-    "rc-select": "~12.1.6",
+    "rc-select": "github:curly210102/select#418f80de37191b376941b0863408081d7be3a1f9",
     "rc-slider": "~9.7.1",
     "rc-steps": "~4.1.0",
     "rc-switch": "~3.2.0",

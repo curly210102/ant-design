@@ -1,17 +1,21 @@
 ---
 order: 1
 title:
-  zh-CN: 带搜索框
-  en-US: Select with search field
+  zh-CN: Windows 下 Firefox 原生滚动条占位问题
+  en-US: Firefox scrollbar need extract space
 ---
 
 ## zh-CN
 
-展开后可对选项进行搜索。
+Windows Firefox 及 IE 浏览器，滚动条并非脱离文档会占据空间，导致内容无法自适应显示
+
+对应 Issue: https://github.com/ant-design/ant-design/issues/29528
 
 ## en-US
 
-Search the options while expanded.
+Windows Firefox 及 IE 浏览器，滚动条并非脱离文档会占据空间，导致内容无法自适应显示
+
+对应 Issue: https://github.com/ant-design/ant-design/issues/29528
 
 ```jsx
 import { Select } from 'antd';
@@ -35,22 +39,17 @@ function onSearch(val) {
 }
 
 ReactDOM.render(
-  <Select
-    showSearch
-    style={{ width: 200 }}
-    placeholder="Select a person"
-    optionFilterProp="children"
-    onChange={onChange}
-    onFocus={onFocus}
-    onBlur={onBlur}
-    onSearch={onSearch}
-    filterOption={(input, option) =>
-      option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-    }
-  >
+  <Select style={{ width: 200 }} placeholder="Select a person" dropdownMatchSelectWidth={false}>
+    <Option value="davinci">Leonardo di ser Piero da Vinci</Option>
     <Option value="jack">Jack</Option>
     <Option value="lucy">Lucy</Option>
-    <Option value="tom">Tom</Option>
+    <Option value="jerry">Jerry</Option>
+    <Option value="kid">Kid</Option>
+    <Option value="tomas">Tomas</Option>
+    <Option value="lingard">Lingard</Option>
+    <Option value="jim">Jim</Option>
+    <Option value="paul">Paul</Option>
+    <Option value="book">Book</Option>
   </Select>,
   mountNode,
 );
